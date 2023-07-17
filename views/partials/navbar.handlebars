@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary px-4">
+
+    <a role="button" id="burger" class="navbar-toggler" aria-label="menu" aria-expanded="false" data-target="pages">
+        <span class="navbar-toggler-icon"></span>
+    </a>
+
+    <div id="pages" class="collapse navbar-collapse">
+
+        <ul class="navbar-nav mr-auto">
+            {{!-- if user is logged in, display app pages --}}
+            <li class="nav-item">
+                <a href="/" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="/dashboard" class="nav-link">Dashboard</a>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+            {{!-- If user is logged in, show logout button --}}
+            {{#if logged_in}}
+            <li class="nav-item">
+                <button class="nav-link btn btn-dark my-2" id="logoutBtn">Logout</button>
+            </li>
+            {{else}}
+            <li class="nav-item">
+                <a href="/login" class="nav-link">Log In</a>
+            </li>
+            <li class="nav-item">
+                <a href="/signup" class="nav-link">Sign Up</a>
+            </li>
+            {{/if}}
+        </ul>
+        
+    </div>
+
+</nav>

@@ -39,8 +39,18 @@ router.post('/newcomment', async (req, res) => {
     try {
         Comment.create({
             comment_text: req.body.comment_text,
-        }).then(comment => {});
+        }).then(comment => {
+            comment.setUser(req.session.user_id);
+            comment.setPost(req.body.post_id);
+            res.json(comment);
+        });
     }
+
+    catch (err) {
+        res.status(400).json(err);
+    }
+    
 });
+
 
 module.exports = router;

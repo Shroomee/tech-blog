@@ -1,0 +1,33 @@
+<script src="/js/comment.js"></script>
+    <div class="card" id="article" data-id="{{post.id}}">
+        <header class="card-header">
+            <p class="card-header-title">{{post.title}}</p>
+            <p class="my-3 mx-4">Posted by {{user.username}} on {{format_date post.createdAt}}</p>
+        </header>
+        <div class="card-body">
+            <div class="content">
+                <p>{{post.content}}</p>
+            </div>
+            {{#if createdByUser}}
+                <button class="btn btn-sm btn-light" id="editPost" onclick="window.location.href='/post/{{post.id}}/edit'">Edit</button>
+                <button class="btn btn-sm btn-light" id="deletePost">Delete</button>
+            {{else}}
+            {{/if}}
+        </div>
+    </div>
+
+    <div class="comment-thread">
+        {{#each comments as |comment|}}
+        {{> comment}}
+        {{/each}}
+    </div>
+
+    <form class="my-3">
+        <h3>Leave a comment:</h3>
+        <div class="form-group">
+            <textarea class="form-control" id="comment" rows="4" cols="50" required></textarea>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" id="createComment">Post</button>
+        </div>
+    </form>
