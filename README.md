@@ -11,6 +11,8 @@ This is a full stack application using sequelize and express and handlebars. it 
 - [Installation](#installation)
 - [Usage](#usage)
 - [GitHub](#github)
+- [Deployed Linik](#deployed-link)
+
 
 
 ## User Story
@@ -33,8 +35,13 @@ type npm run start and go to deployed app link
 
 ## Usage
 
-
+use crud operations to use the website
 
 ## Github
 
 https://github.com/Shroomee/tech-blog
+
+
+## Deployed Link
+
+https://tech-blog-davis-f1202899bb68.herokuapp.com/
